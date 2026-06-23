@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+        body {
+            background-color: #FFF8EE;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(107, 79, 58, 0.1);
+            width: 100%;
+            max-width: 550px;
+            text-align: center;
+            border: 1px solid #F5D7A1;
+        }
+
+        h1 {
+            color: #6B4F3A; /* Deep Brown */
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 14px;
+            margin: 10px 0;
+            border: 2px solid #F5D7A1;
+            border-radius: 12px;
+            font-size: 16px;
+            box-sizing: border-box;
+            color: #6B4F3A;
+            background-color: #FFF8EE;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #6B4F3A;
+            background-color: #ffffff;
+        }
+
+        button {
+            background: #6B4F3A; /* Deep Brown */
+            color: #FFF8EE; /* Cream text */
+            border: none;
+            padding: 14px;
+            border-radius: 12px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background 0.3s ease, transform 0.1s;
+        }
+
+        button:hover {
+            background: #8A664B;
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .result-container {
+            margin-top: 25px;
+            padding: 15px;
+            border-top: 2px solid #FFF8EE;
+        }
+
+        h2 {
+            color: #6B4F3A;
+            font-size: 1.4rem;
+            margin: 10px 0 0 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Calculator</h1>
+
+    <form method="POST">
+        <input type="number" step="any" name="num1" placeholder="First Number" required>
+        <input type="number" step="any" name="num2" placeholder="Second Number" required>
+
+        <select name="operation">
+            <option value="+">Addition (+)</option>
+            <option value="-">Subtraction (-)</option>
+            <option value="*">Multiplication (×)</option>
+            <option value="/">Division (÷)</option>
+        </select>
+
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div class="result-container">
+        <h2>Result: {{ result }}</h2>
+    </div>
+</div>
+
+</body>
+</html>
